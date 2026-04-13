@@ -1,0 +1,45 @@
+class Persona:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+
+    def get_nombre_completo(self):
+        return f"{self.apellido}, {self.nombre}"
+
+
+class Libro:
+    def __init__(self, titulo, autor, isbn, paginas, edicion, editorial, ciudad, pais, fecha):
+        self.titulo = titulo
+        self.autor = autor          
+        self.isbn = isbn
+        self.paginas = paginas
+        self.edicion = edicion
+        self.editorial = editorial
+        self.ciudad = ciudad
+        self.pais = pais
+        self.fecha = fecha          
+
+    def mostrar_informacion(self):
+        print(f"Título: {self.titulo} {self.edicion} edición")
+        print(f"Autor: {self.autor.get_nombre_completo()}")
+        print(f"ISBN: {self.isbn}")
+        print(f"{self.editorial}, {self.ciudad} ({self.pais})")
+        print(f"{self.fecha}")
+        print(f"{self.paginas} páginas")
+
+#PROGRAMA PRINCIPAL
+autor = Persona("Julio", "Cortázar")
+
+libro = Libro(
+    "Rayuela",
+    autor,
+    "978-84-376-0494-7",
+    672,
+    "1a",
+    "Editorial Sudamericana",
+    "Buenos Aires",
+    "Argentina",
+    "martes 28 de junio de 1963"
+)
+
+libro.mostrar_informacion()

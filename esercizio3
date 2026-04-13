@@ -1,0 +1,46 @@
+class Punto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+class Linea:
+    def __init__(self, punto_a, punto_b):
+        self._punto_a = punto_a
+        self._punto_b = punto_b
+
+    def mueve_derecha(self, distancia):
+        self._punto_a.x += distancia
+        self._punto_b.x += distancia
+
+    def mueve_izquierda(self, distancia):
+        self._punto_a.x -= distancia
+        self._punto_b.x -= distancia
+
+    def mueve_arriba(self, distancia):
+        self._punto_a.y += distancia
+        self._punto_b.y += distancia
+
+    def mueve_abajo(self, distancia):
+        self._punto_a.y -= distancia
+        self._punto_b.y -= distancia
+
+    def mostrar(self):
+        print(f"Punto A: ({self._punto_a.x}, {self._punto_a.y})")
+        print(f"Punto B: ({self._punto_b.x}, {self._punto_b.y})")
+
+#PROGRAMA DE PRUEBA
+p1 = Punto(0, 0)
+p2 = Punto(3, 4)
+
+linea = Linea(p1, p2)
+
+linea.mostrar()
+# Punto A: (0, 0)
+# Punto B: (3, 4)
+
+linea.mueve_derecha(2)
+linea.mueve_arriba(1)
+
+linea.mostrar()
+# Punto A: (2, 1)
+# Punto B: (5, 5)

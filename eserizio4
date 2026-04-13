@@ -1,0 +1,29 @@
+class Cancion:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+
+    def get_titulo(self):
+        return self.titulo
+
+    def get_autor(self):
+        return self.autor
+
+    def set_titulo(self, nuevo_titulo):
+        self.titulo = nuevo_titulo
+
+    def set_autor(self, nuevo_autor):
+        self.autor = nuevo_autor
+
+#PROGRAMA DE PRUEBA
+canzone = Cancion("En la cupula", "Soda Stereo")
+
+print(canzone.get_titulo())  # En la cupula
+print(canzone.get_autor())   # Soda Stereo
+
+canzone.set_titulo("Zitti e buoni") #El .set sirve para cambiar el valor de un atributo
+canzone.set_autor("Maneskin")
+
+# Ver cambios
+print(canzone.get_titulo())  # Zitti e buoni
+print(canzone.get_autor())   # Maneskin
